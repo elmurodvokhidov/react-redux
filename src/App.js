@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Counter from './components/Counter';
+import Main from './components/Main';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
-
-  const [count, setCount] = useState(1);
-
-
-
   return (
-    <div className="App container">
-      <h1>Count: {count}</h1>
-      <Counter />
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='register' element={<Register />} />
+      </Routes>
     </div>
   );
 }
